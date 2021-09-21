@@ -83,18 +83,18 @@ class Inidicator():
     def __init__(self):
         self.indicatorcolors = [COLORS.Yellow, COLORS.Green, COLORS.Blue]
         self.readcolors = []                # read as in past tense
-        colorlist = []
+        self.colorlist = []
 
     def readIndicator(self):
-        color = indicator_sensor.color()
+        color = indicatorsensor.color()
         while color not in self.indicatorcolors:
             continue
-        colorlist.append(color)            # Temporary storage for the colors
-        if len(colorlist) == 2:
-            self.readcolors.append(colorlist)
+        self.colorlist.append(color)            # Temporary storage for the colors
+        if len(self.colorlist) == 2:
+            self.readcolors.append(self.colorlist)
         return self.readcolors
 
-    def getColorList(self,):
+    def getcolorlist(self):
         pass
 
 class Navigation():
