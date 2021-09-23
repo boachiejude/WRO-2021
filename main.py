@@ -132,6 +132,8 @@ class Main():
                 """
             elif i = 2:
                 # Code that runs after the second junction
+                """
+                
             elif i = 3:
                 # Code that runs after the third junction
             elif i = 4:
