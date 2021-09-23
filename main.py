@@ -63,7 +63,7 @@ class Controller():
 
 class Indicator():
     def __init__(self):
-        self.indicatorcolors = [COLORS.Yellow, COLORS.Green, COLORS.Blue]
+        self.indicatorcolors = [Color.YELLOW, Color.GREEN, Color.BLUE, None]
         self.readcolors = []                    # "read" as in past tense
         self.colorlist = []
 
@@ -91,7 +91,7 @@ class Movement(Controller):
     def follow1212(self, lightsensor):
         # Creating an object of the Controller class for the follow1212 function
         control = Controller(12) 
-        while lightsensor.color() != COLORS.Black:
+        while lightsensor.color() != Color.BLACK:
             robot.drive(self.speed, control.onetwoonetwo(lightsensor, self.speed, 2))      # Arbritrary value of kp
 
     def toLine(self, kp, distance):
@@ -116,13 +116,13 @@ class Movement(Controller):
         houseIndicator.readIndicator()
         robot.reset()
         for i in houseIndicator.getColorList():
-            if i == COLORS.Green:
+            if i == Color.Green:
                 # Drop the green units
                 pass
-            elif i == COLORS.Yellow:
+            elif i == Color.Yellow:
                 # Drop the yellow units from the grabber
                 pass
-            elif i == COLORS.Blue:
+            elif i == Color.Blue:
                 # Drop blue units
                 pass
             else:
@@ -149,7 +149,7 @@ class Main():
                 # 1212 with sensor1 at 100 speed
                 self.move.follow1212(leftsensor)
                 # turn till sensor 2 senses the black line
-                self.move.turnUntil(leftsensor, COLORS.Black)
+                self.move.turnUntil(leftsensor, Color.Black)
                 
             elif i == 1:
                 # Code that runs after the first junction
@@ -158,9 +158,9 @@ class Main():
                 # 1212 at speed 100 with sensor 1
                 self.move.follow1212(leftsensor)
                 # turn clockwise until sensor 1 senses the black line
-                self.move.turnUntil(leftsensor, COLORS.Black)
+                self.move.turnUntil(leftsensor, Color.Black)
                 # turn clockwise until sensor 1 senses the white line
-                self.move.turnUntil(leftsensor, COLORS.White)
+                self.move.turnUntil(leftsensor, Color.White)
                 # correct to line at speed 75 for 0.75 rotations with kp = 5
                 self.move.toLine(5, 10)
                 # 1212 with sensor 1 at 100 speed
