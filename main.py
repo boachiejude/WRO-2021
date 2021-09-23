@@ -65,7 +65,7 @@ class Controller():
 class Movement(Controller):
     def __init__(self, speed):
         self.speed = speed
-        self.distance = robot.distance()
+        return None
     
     def follow1212(self, lightsensor):
       # Creating an object of the Controller class for the follow1212 function
@@ -82,7 +82,7 @@ class Movement(Controller):
 class Inidicator():
     def __init__(self):
         self.indicatorcolors = [COLORS.Yellow, COLORS.Green, COLORS.Blue]
-        self.readcolors = []                # read as in past tense
+        self.readcolors = []                    # read as in past tense
         self.colorlist = []
 
     def readIndicator(self):
@@ -107,4 +107,71 @@ class Main():
         pass
 
     def __run(self):
-        pass
+        for i in range(21):         # Arbitrary value - will during testing.
+            if i == 0:
+                # Start code.
+                # Moving out of the start zone
+                robot.straight(150)
+
+                """
+                Pseudocode:
+                    > correct to line for 0.2 rotations with kp = 2 and speed = 5
+                    > 1212 with sensor1 at 100 speed
+                    > turn till sensor 2 senses the black line
+                    > correct to line for 1 rotation with kp = 2.5 speed = 75
+                """
+            elif i = 1:
+                # Code that runs after the first junction
+                """
+                1212 at speed 100 with sensor 1
+                turn clockwise until sensor 1 senses the black line
+                turn clockwise until sensor 1 senses the white line
+                correct to line at speed 75 for 0.75 rotations with kp = 5
+                1212 with sensor 1 at 100 speed
+                """
+            elif i = 2:
+                # Code that runs after the second junction
+            elif i = 3:
+                # Code that runs after the third junction
+            elif i = 4:
+                # Code that runs after the fourth junction
+            elif i = 5:
+                # Code that runs after the fifth junction
+            elif i = 6:
+                # Code that runs after the sixth junction
+            elif i = 7:
+                # Code that runs after the seven junction
+            elif i = 8:
+                # Code that runs after the eigth junction
+            elif i = 9:
+                # Code that runs after the ninth junction
+            elif i = 10:
+                # Code that runs after the tenth junction
+            elif i = 11:
+                # Code that runs after the eleventh junction
+            elif i = 12:
+                # Code that runs after the twelth junction
+            elif i = 13:
+                # Code that runs after the thirteenth junction
+            elif i = 14:
+                # Code that runs after the fourteenth junction
+            elif i = 15:
+                # Code that runs after the fifteenth junction
+            elif i = 16:
+                # Code that runs after the sixteenth junction
+            elif i = 17:
+                # Code that runs after the seventeenth junction
+            elif i = 18:
+                # Code that runs after the eigteenth junction
+            elif i = 19:
+                # Code that runs after the nineteenth junction
+            elif i = 20:
+                # Code that runs after the twentieth junction
+
+             else:
+                 # Kinda like the default case for the "switch statement"
+                 # I'm using "" because its not actually a switch statement   
+            
+
+if __name__ = '__main__':
+    Main().__run()
