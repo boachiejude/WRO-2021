@@ -120,14 +120,15 @@ class Main():
                     > turn till sensor 2 senses the black line
                     > correct to line for 1 rotation with kp = 2.5 speed = 75
                 """
-            elif i = 1:
+            elif i = 1:`
                 # Code that runs after the first junction
                 """
-                1212 at speed 100 with sensor 1
-                turn clockwise until sensor 1 senses the black line
-                turn clockwise until sensor 1 senses the white line
-                correct to line at speed 75 for 0.75 rotations with kp = 5
-                1212 with sensor 1 at 100 speed
+                Pseudocode:
+                    > 1212 at speed 100 with sensor 1
+                    > turn clockwise until sensor 1 senses the black line
+                    > turn clockwise until sensor 1 senses the white line
+                    > correct to line at speed 75 for 0.75 rotations with kp = 5
+                    > 1212 with sensor 1 at 100 speed
                 """
             elif i = 2:
                 # Code that runs after the second junction
