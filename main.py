@@ -47,14 +47,12 @@ robot = DriveBase(
 # The controller class. The controller class defines fucntions used for controlling the movements of the robot.
 class Controller():
     def __init__(self, thresholdvalue):
-        self.left_value = leftsensor.reflection()
-        self.right_value = rightsensor.reflection()
         self.left_color = leftsensor.color()
         self.right_color = rightsensor.color()
         self.thresholdvalue = thresholdvalue
     
     def correctToLine(self, kp):
-        return (self.self.left_value - self.self.right_value) * self.kp
+        return (leftsensor.reflection() - rightsensor.reflection()) * self.kp
 
     def onetwoonetwo(self, lightsensor, speed, kp):
         if lightsensor == leftsensor:
@@ -70,8 +68,10 @@ class Movement(Controller):
         self.distance = robot.distance()
     
     def follow1212(self, lightsensor):
+      # Creating an object of the Controller class for the follow1212 function
+      control = Controller(12) 
         while lightsensor.color() != COLORS.Black:
-            Controller().onetwoonetwo(lightsensor, self.speed, 2)       # Arbritrary value of kp
+            robot.drive(self.speed, control.onetwoonetwo(lightsensor, self.speed, 2))      # Arbritrary value of kp
 
     def toLine(self, kp, distance):
         # Object of the controller class. AKA instance
@@ -95,10 +95,6 @@ class Inidicator():
         return self.readcolors
 
     def getcolorlist(self):
-        pass
-
-class Navigation():
-    def __init__(self):
         pass
 
 
