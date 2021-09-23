@@ -88,11 +88,13 @@ class Inidicator():
     def readIndicator(self):
         color = indicatorsensor.color()
         while color not in self.indicatorcolors:
+            color = indicatorsensor.color()
             continue
         self.colorlist.append(color)            # Temporary storage for the colors
         if len(self.colorlist) == 2:
             self.readcolors.append(self.colorlist)
-        return self.readcolors
+            return self.readcolors
+         self.readIndicator()
 
     def getcolorlist(self):
         pass
